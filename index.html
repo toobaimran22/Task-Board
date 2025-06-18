@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Board</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="./task.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark justify-content-between px-3">
+        <span class="navbar-brand mb-0 h1">Task Board</span>
+        <span class="navbar-text text-white">Delta Labs</span>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="text-center mb-4">Task Board</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+            <h5>Assigned</h5>
+            <div id="assigned" class="column mb-2"></div>
+            <button class="btn btn-pastel-blue" onclick="addCard('assigned')">Add to Assigned</button>
+            </div>
+
+            <div class="col-md-4">
+            <h5>In Process</h5>
+            <div id="inProcess" class="column mb-2"></div>
+            <button class="btn btn-pastel-pink " onclick="addCard('inProcess')">Add to In Process</button>
+            </div>
+
+            <div class="col-md-4">
+            <h5>Completed</h5>
+            <div id="completed" class="column mb-2"></div>
+            <button class="btn btn-pastel-purple" onclick="addCard('completed')">Add to Completed</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center my-3">
+        <button class="btn btn-pastel-yellow" onclick="resetBoard()">Reset Board</button>
+    </div>
+
+
+</body>
+</html>

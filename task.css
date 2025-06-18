@@ -1,0 +1,47 @@
+.column{
+      min-height: 400px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+.card-item {
+    margin-bottom: 10px;
+    cursor: move;
+}
+
+.navbar {
+  padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.navbar-text {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.btn-pastel-blue {
+  background-color: #aec6cf;
+  color: #000;
+}
+
+.btn-pastel-pink {
+  background-color: #fbb1bd;
+  color: #000;
+}
+
+.btn-pastel-purple {
+  background-color: #cdb4db;
+  color: #000;
+}
+
+.btn-pastel-yellow {
+  background-color: #fff59d;
+  color: #000;
+}
+
