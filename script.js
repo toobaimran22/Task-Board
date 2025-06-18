@@ -1,4 +1,5 @@
 let cardId = 0;
+let currentColumn = null;
 
 function initDragAndDrop() {
   $(".column").sortable({
@@ -9,18 +10,9 @@ function initDragAndDrop() {
 }
 
 function addCard(columnId) {
-  const task = prompt("Enter task:");
-  if (!task) return;
-
-  $("<div>", {
-    class: "card card-item",
-    "data-id": "card" + ++cardId
-  })
-  .append($("<div>", { class: "card-body p-2", text: task }))
-  .appendTo("#" + columnId);
-
-  initDragAndDrop();
-  saveState();
+  currentColumn = columnId;
+  $('#taskInput').val('');
+  $('#exampleModalCenter').modal('show');
 }
 
 function saveState() {
@@ -37,7 +29,6 @@ function saveState() {
 
   localStorage.setItem("taskBoardState", JSON.stringify(state));
 }
-
 
 function loadState() {
   const saved = localStorage.getItem("taskBoardState");
@@ -64,8 +55,23 @@ function resetBoard() {
   }
 }
 
-
 $(document).ready(() => {
   loadState();
   initDragAndDrop();
+
+  $('#saveTaskBtn').click(function () {
+    const taskText = $('#taskInput').val().trim();
+    if (!taskText || !currentColumn) return;
+
+    const $card = $('<div>')
+      .addClass('card card-item')
+      .attr('data-id', 'card' + ++cardId)
+      .append($('<div>').addClass('card-body p-2').text(taskText));
+
+    $('#' + currentColumn).append($card);
+    $('#exampleModalCenter').modal('hide');
+
+    initDragAndDrop();
+    saveState();
+  });
 });
